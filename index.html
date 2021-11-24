@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hello Kitty Cafe</title>
+	<style type="text/css">
+	html{
+		line-height: 1rem;
+	}
+		body {
+			margin: 0;
+			font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+			overflow-x: hidden;
+		}
+		#banner{
+			height: 500px;
+			width: 100%;
+			overflow-x: hidden;
+		}
+		.title{
+			margin: 0.6rem;
+			font-size: 3rem;
+			font-weight: bold;
+			text-align: center;
+		}
+		.block-btn{
+			width: 100%;
+			display: block;
+		}
+		.btn{
+			
+			border: white 2px solid;
+			padding: 1rem;
+			border-radius: 10px;
+			margin: auto;
+			background-color: transparent;
+			color: white;
+			font-size: 1.2rem;
+			
+		}
+		.overlay{
+			z-index: 999;
+			position:absolute;
+			height: inherit;
+			width: 45%;
+			background-color: rgb(242, 157, 163, 0.9);
+		}
+		.sliders {
+			position:absolute;
+			width: 500vw;
+			height: inherit;
+			overflow: hidden;
+			animation-name: slide;
+			animation-duration: 20s;
+			animation-iteration-count: infinite;
+		}
+		.slider{
+			width: 100vw;
+			height: inherit;
+			display: inline;
+			object-fit: cover;
+		}
+
+		@keyframes slide {
+			0%{
+				left:0vw;
+			}
+			20%{
+				left:-101vw;
+			}
+			40%{
+				left:-200vw
+			}
+			60%{
+				left:-200vw
+			}
+			80%{
+				left:-100vw;
+			}
+			100%{
+				left:0vw;
+			}
+		}
+		.content{
+			padding: 1.3rem;
+			padding-right: 4rem;
+		}
+		.card{
+			border-radius: 10px;
+			padding: 1.3rem;
+		}
+		.catalogo{
+			background-color: rgb(239, 164, 201);
+			color: white;
+			width: 100%;
+		}
+		.card-product{
+			display: inline-block;
+			border-radius: 8px;
+			margin: 1rem;
+			height: fit-content;
+			overflow: hidden;
+		}
+		.card-product > img{
+			max-height: 330px;
+			width: 100%;
+			object-fit: contain;
+			border-radius: 8px;
+		}
+		.card > div{
+			padding: 1rem;
+		}
+		.small-btn{
+			display: block;
+			border: white 2px solid;
+			border-radius: 4px;
+			margin: auto;
+			background-color: rgb(239, 164, 201);
+			width: 99%;
+			color: white;
+			font-size: 1.1rem;
+		}
+		.card-content{
+			display: block;
+			background-color: #F29DA3;
+			color: white;
+			border-radius: 8px;
+			padding: 1rem;
+		}
+		.footer{
+			padding:2rem
+		}
+	</style>
+</head>
+<body>
+	<div id="banner">
+		<div class="overlay">
+			<div class="title" style="margin-top: 8rem">
+				Hello Kitty Cafe
+			</div>
+			<div style="margin: 2rem;">
+				<button class="btn block-btn">
+					Productos
+				</button>
+			</div>
+			<div style="margin: 2rem;">
+				<button class="btn block-btn">
+					Contacto
+				</button>
+			</div>
+		</div>
+		<div class="sliders">
+			<img class="slider" src="./sliders/1.png" alt="">
+			<img class="slider" src="./sliders/2.jpg" alt="">
+			<img class="slider" src="./sliders/3.png" alt="">
+		</div>
+	</div>
+	<div class="content">
+		<div class="card catalogo">
+			<div class="title">
+				Productos
+			</div>
+		</div>
+		<div id="catalogo" style="width: fit-content; margin: auto;">
+			<div class="card-product">
+				<img src="./productos/a.png" alt="">
+				<div>
+					<button class="small-btn block-btn">
+						Comprar
+					</button>
+					<button class="small-btn block-btn">
+						Agregar Carro
+					</button>
+				</div>
+			</div>
+			<div class="card-product">
+				<img src="./productos/b.png" alt="">
+				<div>
+					<button class="small-btn block-btn">
+						Comprar
+					</button>
+					<button class="small-btn block-btn">
+						Agregar Carro
+					</button>
+				</div>
+			</div>
+			<div class="card-product">
+				<img src="./productos/c.png" alt="">
+				<div>
+					<button class="small-btn block-btn">
+						Comprar
+					</button>
+					<button class="small-btn block-btn">
+						Agregar Carro
+					</button>
+				</div>
+			</div>
+		</div>
+		<div style="display: flex;">
+			<div class="card-content">
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sapiente aut quos distinctio ullam ea tempore earum odio omnis inventore delectus repudiandae voluptatem quasi quas eum obcaecati, minus dignissimos vitae?
+				</p>
+			</div>
+			<img class="card-product" src="./productos/a.png" alt="">
+		</div>
+		<div style="display: flex; margin-top: 1rem;">
+			<img class="card-product" src="./productos/b.png" alt="">
+			<div class="card-content">
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sapiente aut quos distinctio ullam ea tempore earum odio omnis inventore delectus repudiandae voluptatem quasi quas eum obcaecati, minus dignissimos vitae?
+				</p>
+			</div>
+		</div>
+		<div style="display: flex; margin-top: 1rem;">
+			<div class="card-content">
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sapiente aut quos distinctio ullam ea tempore earum odio omnis inventore delectus repudiandae voluptatem quasi quas eum obcaecati, minus dignissimos vitae?
+				</p>
+			</div>
+			<img class="card-product" src="./productos/c.png" alt="">
+		</div>
+	</div>
+	<div style="margin-top: 1rem;" class="footer card-content">
+		<div>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sapiente aut quos distinctio ullam ea tempore earum odio omnis inventore delectus repudiandae voluptatem quasi quas eum obcaecati, minus dignissimos vitae?
+			</p>
+		</div>
+		<div style="width:100%">
+			<div style="width: fit-content; margin: auto">
+				<button style=" margin: auto" class="btn">
+					Productos
+				</button>
+				<button style=" margin: auto" class="btn">
+					Contacto
+				</button>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
