@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Hello Kitty Cafe</title>
 	<style type="text/css">
-	html{
-		line-height: 1rem;
-	}
+		html {
+			line-height: 1rem;
+			background-color: #FFF32B;
+		}
+
 		body {
-			margin: 0;
 			font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+
+		html,
+		body {
+			width: 100%;
+			margin: 0px;
+			padding: 0px;
 			overflow-x: hidden;
 		}
-		#banner{
+
+		#banner {
 			height: 500px;
 			width: 100%;
 			overflow-x: hidden;
+			z-index: 5;
+			border-radius: 5px;
 		}
-		.title{
+
+		.title {
 			margin: 0.6rem;
 			font-size: 3rem;
 			font-weight: bold;
 			text-align: center;
 		}
-		.block-btn{
+
+		.block-btn {
 			width: 100%;
 			display: block;
 		}
-		.btn{
-			
+
+		.btn {
 			border: white 2px solid;
 			padding: 1rem;
 			border-radius: 10px;
@@ -38,81 +52,100 @@
 			background-color: transparent;
 			color: white;
 			font-size: 1.2rem;
-			
 		}
-		.overlay{
-			z-index: 999;
-			position:absolute;
+
+		.overlay {
+			z-index: 4;
+			position: fixed;
 			height: inherit;
-			width: 45%;
+			width: 256px;
+			height: 64px;
 			background-color: rgb(242, 157, 163, 0.9);
+			border-radius: 5px;
 		}
+
 		.sliders {
-			position:absolute;
+			border-radius: 5px;
+			position: absolute;
 			width: 500vw;
 			height: inherit;
 			overflow: hidden;
 			animation-name: slide;
 			animation-duration: 20s;
 			animation-iteration-count: infinite;
+			z-index: -99;
 		}
-		.slider{
+
+		.slider {
 			width: 100vw;
 			height: inherit;
 			display: inline;
 			object-fit: cover;
+			z-index: -100;
 		}
 
 		@keyframes slide {
-			0%{
-				left:0vw;
+			0% {
+				left: 0vw;
 			}
-			20%{
-				left:-101vw;
+
+			20% {
+				left: -101vw;
 			}
-			40%{
-				left:-200vw
+
+			40% {
+				left: -200vw
 			}
-			60%{
-				left:-200vw
+
+			60% {
+				left: -200vw
 			}
-			80%{
-				left:-100vw;
+
+			80% {
+				left: -100vw;
 			}
-			100%{
-				left:0vw;
+
+			100% {
+				left: 0vw;
 			}
 		}
-		.content{
+
+		.content {
 			padding: 1.3rem;
 			padding-right: 4rem;
 		}
-		.card{
+
+		.card {
 			border-radius: 10px;
 			padding: 1.3rem;
 		}
-		.catalogo{
+
+		.catalogo {
 			background-color: rgb(239, 164, 201);
 			color: white;
 			width: 100%;
 		}
-		.card-product{
+
+		.card-product {
 			display: inline-block;
 			border-radius: 8px;
 			margin: 1rem;
 			height: fit-content;
 			overflow: hidden;
 		}
-		.card-product > img{
+
+		.card-product>img {
 			max-height: 330px;
 			width: 100%;
 			object-fit: contain;
 			border-radius: 8px;
 		}
-		.card > div{
+
+		.card>div {
 			padding: 1rem;
 		}
-		.small-btn{
+
+		.small-btn {
 			display: block;
 			border: white 2px solid;
 			border-radius: 4px;
@@ -122,40 +155,115 @@
 			color: white;
 			font-size: 1.1rem;
 		}
-		.card-content{
+
+		.card-content {
 			display: block;
 			background-color: #F29DA3;
 			color: white;
 			border-radius: 8px;
 			padding: 1rem;
 		}
-		.footer{
-			padding:2rem
+
+		.footer {
+			padding: 2rem
+		}
+
+		.appbar > ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #999;
+			border-radius: 5px;
+		}
+
+		.appbar{
+			width: 95%;
+			margin: auto;
+		}
+
+		.appbar > ul > li {
+			float: left;
+		}
+
+		.appbar > ul > li a,
+		.dropbtn {
+			display: inline-block;
+			/*Color de letra*/
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		.appbar > ul > li a:hover,
+		.dropdown:hover .dropbtn {
+			/*Color al ponerse encima del la barra*/
+			background-color: orange;
+		}
+
+		.appbar > ul > li.dropdown {
+			display: inline-block;
+		}
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			/*Color de fondo del menu*/
+			background-color: #444;
+			z-index: 1;
+		}
+
+		.dropdown-content a {
+			/*Color de fondo de la barra*/
+			color: black;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			text-align: left;
+		}
+
+		.dropdown-content a:hover {
+			/*Color al ponerse encima*/
+			background-color: orange;
+		}
+
+		.dropdown:hover .dropdown-content {
+			display: block !important;
 		}
 	</style>
 </head>
+
 <body>
-	<div id="banner">
-		<div class="overlay">
-			<div class="title" style="margin-top: 8rem">
-				Hello Kitty Cafe
+	<div style="border: #FFF32B solid 32px">
+		<div id="banner">
+			<div class="sliders">
+				<img class="slider" src="./productos/1.jpg" alt="">
+				<img class="slider" src="./productos/2.jpg" alt="">
+				<img class="slider" src="./productos/3.jpg" alt="">
 			</div>
-			<div style="margin: 2rem;">
-				<button class="btn block-btn">
-					Productos
-				</button>
-			</div>
-			<div style="margin: 2rem;">
-				<button class="btn block-btn">
-					Contacto
-				</button>
+			<div style="position: relative; height: 100%; width: 100%; transform: scaleX(-100%);">
+				<div class="overlay">
+				</div>
+				<div class="overlay" style="top: 87%;">
+				</div>
 			</div>
 		</div>
-		<div class="sliders">
-			<img class="slider" src="./sliders/1.png" alt="">
-			<img class="slider" src="./sliders/2.jpg" alt="">
-			<img class="slider" src="./sliders/3.png" alt="">
-		</div>
+	</div>
+	<div class="appbar">
+		<ul>
+			<li><a href="#home">Inicio</a></li>
+			<li><a href="#news">Nosotros</a></li>
+			<li class="dropdown">
+				<a class="dropbtn">Productos</a>
+				<div class="dropdown-content">
+					<a href="#">Lapices</a>
+					<a href="#">Plumas</a>
+					<a href="#">Portaminas</a>
+				</div>
+			</li>
+		</ul>
+
 	</div>
 	<div class="content">
 		<div class="card catalogo">
@@ -165,7 +273,7 @@
 		</div>
 		<div id="catalogo" style="width: fit-content; margin: auto;">
 			<div class="card-product">
-				<img src="./productos/a.png" alt="">
+				<img src="./productos/1.jpg" alt="">
 				<div>
 					<button class="small-btn block-btn">
 						Comprar
@@ -176,7 +284,7 @@
 				</div>
 			</div>
 			<div class="card-product">
-				<img src="./productos/b.png" alt="">
+				<img src="./productos/2.jpg" alt="">
 				<div>
 					<button class="small-btn block-btn">
 						Comprar
@@ -187,7 +295,7 @@
 				</div>
 			</div>
 			<div class="card-product">
-				<img src="./productos/c.png" alt="">
+				<img src="./productos/3.jpg" alt="">
 				<div>
 					<button class="small-btn block-btn">
 						Comprar
@@ -201,32 +309,20 @@
 		<div style="display: flex;">
 			<div class="card-content">
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sapiente aut quos distinctio ullam ea tempore earum odio omnis inventore delectus repudiandae voluptatem quasi quas eum obcaecati, minus dignissimos vitae?
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sapiente aut quos distinctio ullam
+					ea tempore earum odio omnis inventore delectus repudiandae voluptatem quasi quas eum obcaecati,
+					minus dignissimos vitae?
 				</p>
 			</div>
-			<img class="card-product" src="./productos/a.png" alt="">
-		</div>
-		<div style="display: flex; margin-top: 1rem;">
-			<img class="card-product" src="./productos/b.png" alt="">
-			<div class="card-content">
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sapiente aut quos distinctio ullam ea tempore earum odio omnis inventore delectus repudiandae voluptatem quasi quas eum obcaecati, minus dignissimos vitae?
-				</p>
-			</div>
-		</div>
-		<div style="display: flex; margin-top: 1rem;">
-			<div class="card-content">
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sapiente aut quos distinctio ullam ea tempore earum odio omnis inventore delectus repudiandae voluptatem quasi quas eum obcaecati, minus dignissimos vitae?
-				</p>
-			</div>
-			<img class="card-product" src="./productos/c.png" alt="">
+			<img class="card-product" src="./productos/1.jpg" alt="">
 		</div>
 	</div>
 	<div style="margin-top: 1rem;" class="footer card-content">
 		<div>
 			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sapiente aut quos distinctio ullam ea tempore earum odio omnis inventore delectus repudiandae voluptatem quasi quas eum obcaecati, minus dignissimos vitae?
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sapiente aut quos distinctio ullam ea
+				tempore earum odio omnis inventore delectus repudiandae voluptatem quasi quas eum obcaecati, minus
+				dignissimos vitae?
 			</p>
 		</div>
 		<div style="width:100%">
@@ -242,4 +338,5 @@
 		</div>
 	</div>
 </body>
+
 </html>
